@@ -1,0 +1,14 @@
+C:\Users\gui_s\Desktop\sillentInstaller\bin\Debug\sillentInstaller.exe.config
+C:\Users\gui_s\Desktop\sillentInstaller\bin\Debug\sillentInstaller.exe
+C:\Users\gui_s\Desktop\sillentInstaller\bin\Debug\sillentInstaller.pdb
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.csprojAssemblyReference.cache
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.Properties.Resources.resources
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.csproj.GenerateResource.cache
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.csproj.CoreCompileInputs.cache
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.exe
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.pdb
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.Form1.resources
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.silentInstallerByJson.resources
+C:\Users\gui_s\Desktop\sillentInstaller\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gui_s\Desktop\sillentInstaller\bin\Debug\Newtonsoft.Json.xml
+C:\Users\gui_s\Desktop\sillentInstaller\obj\Debug\sillentInstaller.csproj.CopyComplete

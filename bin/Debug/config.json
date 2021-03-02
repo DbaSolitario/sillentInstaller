@@ -1,0 +1,17 @@
+{
+    APPS:[
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste02", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste02", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste02", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste02", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"},
+        {name:"teste02", url: "10.127.3.4"},
+        {name:"teste01", url: "10.127.3.4"}
+    ]
+}
