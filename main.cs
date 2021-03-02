@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sillentInstaller
 {
-    public partial class main : Form
+    public partial class main : MetroFramework.Forms.MetroForm
     {
         public main()
         {

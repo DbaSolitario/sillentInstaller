@@ -40,7 +40,7 @@ namespace sillentInstaller
             // 
             this.btnInstall.Location = new System.Drawing.Point(12, 309);
             this.btnInstall.Name = "btnInstall";
-            this.btnInstall.Size = new System.Drawing.Size(776, 23);
+            this.btnInstall.Size = new System.Drawing.Size(793, 23);
             this.btnInstall.TabIndex = 0;
             this.btnInstall.Text = "Install";
             this.btnInstall.UseVisualStyleBackColor = true;
@@ -51,26 +51,26 @@ namespace sillentInstaller
             this.lstInstalled.FormattingEnabled = true;
             this.lstInstalled.Location = new System.Drawing.Point(12, 338);
             this.lstInstalled.Name = "lstInstalled";
-            this.lstInstalled.Size = new System.Drawing.Size(776, 95);
+            this.lstInstalled.Size = new System.Drawing.Size(793, 95);
             this.lstInstalled.TabIndex = 1;
             // 
             // pctLoading
             // 
-            this.pctLoading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctLoading.Image = global::sillentInstaller.Properties.Resources.loagin;
             this.pctLoading.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctLoading.InitialImage")));
-            this.pctLoading.Location = new System.Drawing.Point(0, 0);
+            this.pctLoading.Location = new System.Drawing.Point(0, 22);
             this.pctLoading.Name = "pctLoading";
-            this.pctLoading.Size = new System.Drawing.Size(800, 450);
+            this.pctLoading.Size = new System.Drawing.Size(817, 411);
             this.pctLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLoading.TabIndex = 2;
             this.pctLoading.TabStop = false;
+            this.pctLoading.Visible = false;
             // 
             // silentInstallerByJson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(816, 489);
             this.Controls.Add(this.pctLoading);
             this.Controls.Add(this.lstInstalled);
             this.Controls.Add(this.btnInstall);
@@ -80,7 +80,6 @@ namespace sillentInstaller
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "silentInstallerByJson";
-            this.Text = "HelpDesk Center Installer";
             this.Load += new System.EventHandler(this.silentInstallerByJson_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctLoading)).EndInit();
             this.ResumeLayout(false);

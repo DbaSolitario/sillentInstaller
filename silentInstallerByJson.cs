@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace sillentInstaller
 {
-    public partial class silentInstallerByJson : Form
+    public partial class silentInstallerByJson : MetroFramework.Forms.MetroForm
     {
         public silentInstallerByJson()
         {

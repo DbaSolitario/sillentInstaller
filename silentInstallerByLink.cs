@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace sillentInstaller
 {
-    public partial class silentInstallerByLink : Form
+    public partial class silentInstallerByLink : MetroFramework.Forms.MetroForm
     {
         public silentInstallerByLink()
         {
