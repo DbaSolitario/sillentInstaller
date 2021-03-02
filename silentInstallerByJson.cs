@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,41 +18,45 @@ namespace sillentInstaller
         public silentInstallerByJson()
         {
             InitializeComponent();
+            pctLoading.Visible = false;
         }
 
 
         private void silentInstallerByJson_Load(object sender, EventArgs e)
         {
-            int width = this.Width;
-            int heigth = this.Height;
-            int lastWidth = 30;
-            int lastHeigth = 30;
-
-            using (StreamReader r = new StreamReader("config.json"))
+            try
             {
-                string json = r.ReadToEnd();
-                dynamic array = JsonConvert.DeserializeObject(json);
-                foreach (var item in array.APPS)
+                int width = this.Width;
+                int heigth = this.Height;
+                int lastWidth = 30;
+                int lastHeigth = 30;
+
+                using (StreamReader r = new StreamReader("config.json"))
                 {
-
-                    CheckBox chk = new CheckBox();
-                    chk.Text = item.name;
-                    chk.Location = new System.Drawing.Point( lastWidth, lastHeigth);
-                    chk.MaximumSize = new Size(100,100);
-                    this.Controls.Add(chk);
-                    lastWidth += 100;
-                    if(lastWidth >= width)
+                    string json = r.ReadToEnd();
+                    dynamic array = JsonConvert.DeserializeObject(json);
+                    foreach (var item in array.APPS)
                     {
-                        lastHeigth += 30;
-                        lastWidth = 30;
-                    }
-                        
-                    
-                   
-                }
 
+                        CheckBox chk = new CheckBox();
+                        chk.Text = item.name;
+                        chk.Location = new System.Drawing.Point(lastWidth, lastHeigth);
+                        chk.MaximumSize = new Size(100, 100);
+                        this.Controls.Add(chk);
+                        lastWidth += 100;
+                        if (lastWidth >= width)
+                        {
+                            lastHeigth += 30;
+                            lastWidth = 30;
+                        }
+                    }
+
+                }
             }
-           
+            catch(Exception ex)
+            {
+                MessageBox.Show("Runtime erro at system " + ex.Message, "runtime error", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+            }
             
         }
 
@@ -60,37 +65,71 @@ namespace sillentInstaller
 
         }
 
+        public void RunInstall(string appPath)
+        {
+            try
+            {
+                Console.WriteLine("Starting to install application");
+                Process process = new Process();
+                process.StartInfo.FileName = appPath;
+                process.StartInfo.Arguments = string.Format(" /quiet /i ALLUSERS=1");
+                pctLoading.Visible = true;
+                process.Start();
+                process.WaitForExit();
+                Console.WriteLine("Application installed successfully! " + appPath);
+                lstInstalled.Items.Add(appPath);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("There was a problem installing the application! " + e.Message);
+            }
+            finally
+            {
+                pctLoading.Visible = false;
+            }
+        }
+
         private void btnInstall_Click(object sender, EventArgs e)
         {
-            dynamic array;
-            using (StreamReader r = new StreamReader("config.json"))
+            try
             {
-                string json = r.ReadToEnd();
-                array = JsonConvert.DeserializeObject(json);
-
-            }
-            
-
-            foreach (Control c in Controls)
-            {
-                if (c is CheckBox)
+                lstInstalled.Items.Clear();
+                dynamic array;
+                using (StreamReader r = new StreamReader("config.json"))
                 {
-                    CheckBox cb = (CheckBox)c;
-                    if (cb.Checked )
+                    string json = r.ReadToEnd();
+                    array = JsonConvert.DeserializeObject(json);
+
+                }
+
+
+                foreach (Control c in Controls)
+                {
+                    if (c is CheckBox)
                     {
-                        foreach(var item in array.APPS)
+                        CheckBox cb = (CheckBox)c;
+                        if (cb.Checked)
                         {
-                            if(item.name == cb.Text)
+                            foreach (var item in array.APPS)
                             {
-                                Console.WriteLine(item.url);
-                                break;
+                                if (item.name == cb.Text)
+                                {
+                                    RunInstall((string)item.url);
+                                    Console.WriteLine(item.url);
+                                    break;
+                                }
                             }
+                            Console.WriteLine(cb.Text);
                         }
-                        Console.WriteLine(cb.Text);
+
                     }
-                    
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Runtime erro at system " + ex.Message, "runtime error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }

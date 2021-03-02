@@ -16,7 +16,7 @@ namespace sillentInstaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new silentInstallerByJson());
+            Application.Run(new main());
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     APPS:[
-        {name:"teste01", url: "10.127.3.4"},
-        {name:"teste02", url: "10.127.3.4"},
+        {name:"Office 365", url: "c:/TeamsSetupx64_s_8D88FC8A7DF84E2-7-0_.exe"},
+        {name:"Antivirus", url: "c:/vcredist_x64.exe"},
         {name:"teste01", url: "10.127.3.4"},
         {name:"teste02", url: "10.127.3.4"},
         {name:"teste01", url: "10.127.3.4"},
